@@ -1,0 +1,94 @@
+main {
+    height: 2000px;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar {
+    height: 30px;
+    background-color: rgb(255, 255, 255);
+    width: 50%;
+    border-bottom: solid 1px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar > span{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.intrduse-container {
+    position: relative;
+    border: solid 1px;
+    border-radius: 5px;
+    margin-top: 5%;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    height: 400px;
+}
+
+.intrduse-header {
+    position: absolute;
+    left: 5%;
+    top: 10%;
+}
+
+.intrduse-body {
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    top: 40%;
+    font-size: larger;
+}
+
+
+/* work-samples section styling */
+
+.workSamplesContainer{
+    position: relative;
+    border: solid 1px;
+    border-radius: 5px;
+    margin-top: 5%;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 400px;
+}
+
+.prevSampleBtn , .nextSampleBtn{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: rgb(64, 64, 64);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.nextSampleBtn{
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prevSampleBtn:hover , .nextSampleBtn:hover{
+    background-color: rgba(0,0,0,0.6)
+}
+
+.workSample{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+}
