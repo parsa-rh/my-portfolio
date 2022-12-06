@@ -4,11 +4,11 @@ export default function Intrduce (props) {
 return (
     <div className='intrduse-container'>
         <div className='intrduse-header'>
-            {props.language==="english" ? "header" : "سرفصل"}
+            {props.language==="english" ? "Welcome" : "دورود"}
         </div>
         <div className='intrduse-body'>
-            {props.language==="english" ? "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste repellendus ratione quisquam tempora excepturi! Recusandae, rem! Explicabo id consectetur atque, neque, ipsam voluptas deleniti, eaque quidem velit placeat fuga vero?"
-            : "امروزه جاوا اسکریپت در جاهای مختلف حضور دارد و کارهای متنوعی با آن انجام می‌شود. هرچند جاوا اسکریپت را کنار HTML و CSS  از مدت‌ها قبل یکی از آرزوهای برنامه نویسان جاوا اسکریپت این بود که بتوانند کدهای خود را به جز مرورگر کاربر در سمت سرور هم اجرا کنند." }
+            {props.language==="english" ? "In the world of objects and functions that are growing every moment by developers, it is our honor that we become although small, but effective member."
+            : 'در دنیایه شیع ها و توابع که هر لحظه توسط توسعه دهنده ها در حال رشد است این افتخار ما است که یک عضو هر چند کوچک ولی مواثر واقع شویم' }
         </div>
     </div>
 )

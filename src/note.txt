@@ -1,0 +1,19 @@
+1.  section aboute shoro kon ----------------------------------------------------------------
+
+hooshmand kardane safe badaz kamel shodan ke design ham shoro beshe 
+
+2. navbaro hooshmand kon ke bepare ro sectionesh--------------------------------
+
+3. section work sample o kamel kon 
+jaye object elementa dorost beshe --------------------------------
+image ezafe beshe -----------
+onclick -> url ++++++++
+
+4. hooke useContext o dorost kon
+
+5. az in COMMIT be bad mikham ba estefade az useContext, state theme va language bedam
+
+It is an incredible pleasure when you start programming and by combining small functions and logics, you write a big program at the end.
+Parsa understands this. He has been working in the field of programming for several years and has recently become interested in network programming, machine learning and data science.
+لذتی باور نکردنی است در زمانی که شما شما شروع به برنامه نویسی میکنید و با کنار هم قرار دان توابع و منطق های کوچک در آخر یک برنامه بزرگ مینویسید. 
+پارسا این را درک میکند. او چند سالی است که در حوضه ی برنامه نویسی فعالیت دارد و اخیرا به حوضه های برنامه نویسی شبکه ، یادگیری ماشین و علوم دیتا علاقه مند شده 
