@@ -9,11 +9,20 @@ jaye object elementa dorost beshe --------------------------------
 image ezafe beshe -----------
 onclick -> url ++++++++
 
-4. hooke useContext o dorost kon
+4. hooke useContext o yad begir -------------------------------- 
 
-5. az in COMMIT be bad mikham ba estefade az useContext, state theme va language bedam
+5. az in COMMIT be bad mikham ba estefade az useContext, state theme va language bedam (esme commit: good look elements)
+
+6. make useEffect set className for all component --------------------------------
+
+7. make persian contetnt and state for samples ----------------------------------------------------------------
+
+8. set the samples object to a json file--------------------------------
+
 
 It is an incredible pleasure when you start programming and by combining small functions and logics, you write a big program at the end.
 Parsa understands this. He has been working in the field of programming for several years and has recently become interested in network programming, machine learning and data science.
 لذتی باور نکردنی است در زمانی که شما شما شروع به برنامه نویسی میکنید و با کنار هم قرار دان توابع و منطق های کوچک در آخر یک برنامه بزرگ مینویسید. 
 پارسا این را درک میکند. او چند سالی است که در حوضه ی برنامه نویسی فعالیت دارد و اخیرا به حوضه های برنامه نویسی شبکه ، یادگیری ماشین و علوم دیتا علاقه مند شده 
+
+<a target="_blank" href="https://icons8.com/icon/wLKQNJI6J1wM/settings">Settings</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>

@@ -1,18 +1,17 @@
 import React from 'react';
+import { AppThemeContext } from '../App';
 
-export default function Navbar (props){
-    //const AppContext = React.useContext(AppContext)
+export default function Navbar (){
+    const {language, darkMode} = React.useContext(AppThemeContext)
+
     return(
-        
-        <div className="navbar" id='navbar'
-        style={{"flex-direction" : `row${props.language === "english" ? "" : "-reverse"}`}}
-        >
-            <a href={'#intrduceSection'} id={'home'}>
-                {props.language==="english" ? "Home" : "خانه"}</a>
+        <div className="navbar" id='navbar'>
+            <a href={'#intrduceSection'}>
+                {language==="english" ? "Home" : "خانه"}</a>
             <a href={'#workSamplesSection'}>
-                {props.language==="english" ? "Samples" : "نمونه ها"}</a>
+                {language==="english" ? "Samples" : "نمونه ها"}</a>
             <a href={'#aboutSection'}>
-                {props.language==="english" ? "About" : "درباره"}</a>
+                {language==="english" ? "About" : "درباره"}</a>
         </div>
     )
 }

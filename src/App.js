@@ -4,16 +4,16 @@ import NavBar from './component/navbar';
 import Intrduce from './component/intrduce';
 import WorkSamples from './component/work-samples.jsx'
 import About from './component/about';
+import workSamplesObj from './samples-obj.json'
+import uiHandler from './component/ui-handler.js';
 
 // this const is a useContext hook , it pass the states and props to smallest component in App and it is passive
-const AppContext = React.createContext()
+export const AppThemeContext = React.createContext()
 
 export default function App() {
+  const [darkMode, setDarkMode]= React.useState(true)
   const [language, setLanguge]= React.useState('english')
-  const [workSamples, setWorkSamples]= React.useState([
-          {id: 0, display: 'none', name: 'Calculater', discribe:'this is a test for fun first sample and it will be use full for evrey thing and this is a text test i just type it for more line wrting'},
-          {id: 1, display: 'none', name: 'snake', discribe:'u are my wish u are'}
-        ])
+  const [workSamples, setWorkSamples]= React.useState(workSamplesObj.workSamplesObj)
   const [currentWorkSample, setCurrentWorkSample]= React.useState(0)
 
   // this useEffect hook synchronize workSamples and currentWorkSample state and it is passive
@@ -32,6 +32,11 @@ export default function App() {
     })
   },[currentWorkSample])
 
+  // this useEffect get language and dark mode arguments and set className of elements
+  React.useEffect(()=>{
+    uiHandler(language, darkMode)
+  },[ ,language,darkMode])
+
   // this function increments and decrements the current sample value and it is active
   function handleCurrentSample (n){
     setCurrentWorkSample((prevCurrent)=>{
@@ -39,23 +44,24 @@ export default function App() {
         return (prevCurrent + n)
       }else{return prevCurrent}
     })
-    console.log(currentWorkSample)
+  }
+
+  // this functions handel toggles language and darkMode
+  function handeleToggleLanguage (){
+    setLanguge(language === 'english'? 'persian' : 'english')
+  }
+  function handeleToggleDarkMode (){
+    setDarkMode(darkMode == true? false : true)
   }
 
   return(
-    <AppContext.Provider value={language}>
-    <main  style={{height: window.innerHeight*3}}>
+    <AppThemeContext.Provider value={{language, darkMode}}>
+    <main className='main' id='main' style={{height: window.innerHeight*3}}>
       <header className='header'>
-      <AppContext.Provider value={language}>
-        <NavBar 
-          language={language}
-        />
-        </AppContext.Provider>
+        <NavBar/>
       </header>
       <section id='intrduceSection' style={{height: window.innerHeight }}>
-        <Intrduce
-          language={language}
-        />
+        <Intrduce/>
       </section>
       <section id='workSamplesSection' style={{height:window.innerHeight, top:window.innerHeight}}>
         <WorkSamples
@@ -67,7 +73,11 @@ export default function App() {
       <section id='aboutSection' style={{height:window.innerHeight, top:window.innerHeight*2}}>
         <About/>
       </section>
+        <div className='setting-container' id='setting-container'>
+          <button onClick={handeleToggleDarkMode}>Mode</button>
+          <button onClick={handeleToggleLanguage}>Lan</button>
+        </div>
     </main>
-    </AppContext.Provider>
+    </AppThemeContext.Provider>
   )
 }
