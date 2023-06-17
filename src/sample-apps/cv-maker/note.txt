@@ -1,0 +1,5 @@
+baise (App): 
+complete cv object
+
+faze 1 (cv.jsx) :
+map object to component 

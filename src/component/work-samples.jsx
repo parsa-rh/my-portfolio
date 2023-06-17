@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState,createPortal } from 'react';
 import { AppThemeContext } from '../App';
 import { ReactDOM } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function WorkSamples (props){
     const {language, darkMode} = React.useContext(AppThemeContext)
@@ -12,6 +13,8 @@ export default function WorkSamples (props){
             key={sample.id}
             name={sample.name}
             namePersian={sample.namePersian}
+            path={sample.path}
+            image={sample.image}
             description={sample.description}
             descriptionPersian={sample.descriptionPersian}
             display={sample.display}
@@ -26,15 +29,15 @@ export default function WorkSamples (props){
 }
 function WorkSample (props) {
     const {language, darkMode} = React.useContext(AppThemeContext)
+
     return(
         <div className="workSample" id='workSample' style={{display: props.display}}>
             <div className='workSample-about' id='workSample-about'>
                 <h1>{language === 'english'? props.name : props.namePersian}</h1>
                 <h4>{language === 'english'? props.description: props.descriptionPersian}</h4> 
-                <a href='./a.html' target='_blank'>{language === 'english'? 'Visite page' : 'دیدن صفحه'}</a>
+                <a ><Link to={props.path}>{language === 'english'? 'Visite page' : 'دیدن صفحه'}</Link></a>
             </div>
             <div className='workSample-image' id='workSample-image'>
-                <img alt={language === 'english' ? 'a image of current sample' : 'یک عکس از نمونه ی فعلی'} />
             </div>
         </div>
     )

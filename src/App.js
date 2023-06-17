@@ -1,5 +1,6 @@
 import React, { useEffect, useContext, createContext} from 'react';
-import style from './component/style.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import style from './component/work-samples.css'
 import NavBar from './component/navbar';
 import Intrduce from './component/intrduce';
 import WorkSamples from './component/work-samples.jsx'
@@ -40,9 +41,9 @@ export default function App() {
   // this function increments and decrements the current sample value and it is active
   function handleCurrentSample (n){
     setCurrentWorkSample((prevCurrent)=>{
-      if( prevCurrent+n >= 0 && prevCurrent + n <= WorkSamples.length ) {
+      if( prevCurrent+n >= 0 && prevCurrent + n <= WorkSamples.length+1 ) {
         return (prevCurrent + n)
-      }else{return prevCurrent}
+      }else{return (prevCurrent)}
     })
   }
 
