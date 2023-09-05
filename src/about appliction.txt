@@ -1,0 +1,7 @@
+
+Ui handler : for switch language and mode used two state (language, darkMode) and two togle functions in App componenet
+    and there are two way to set the className of elements according to the ui state
+        first : a useEffect hook in all component that take ui state and set the className of elements
+            but it is hard coding and the reason of existing is, it use a useContext hook for pass ui state
+            trough the all components.
+        second: a ui handler function in ui-handler.js file that call in app component set the className of all elements and componenet the className of

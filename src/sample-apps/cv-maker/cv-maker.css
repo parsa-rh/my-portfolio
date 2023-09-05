@@ -1,0 +1,432 @@
+.cv-maker-home-main{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.cv-maker-home-header{
+    height: 40px;
+    border: solid 1px black;
+    position: relative;
+    display: flex;
+}
+
+.cv-maker-container{
+    height: 800px;
+    border: solid 1px black;
+    position: relative;
+}
+
+.cv-maker-editor-navigation{
+    border: solid 1px black;
+    height: 90%;
+    width: 20%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 30px;
+    margin: auto;
+}
+
+.cv-maker-editor-navigation-header { 
+    width: 100%;
+    height: 8%;
+    border-bottom: solid 1px rgb(80, 80, 80);
+}
+
+.cv-maker-editor-navigation-header > button {
+    height: 100%;
+    width: 50%;
+    border: none;
+    border-radius: 0;
+    background-color: rgb(255, 255, 255);
+    outline: none;
+    cursor: pointer;
+}
+
+.cv-maker-editor-navigation-header > button:hover {
+    background-color: #bbb;
+}
+
+.cv-maker-editor-navigation-user-info{
+    position: absolute;
+    height: 86%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.cv-maker-editor-navigation-user-info > div {
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cv-maker-editor-navigation-user-info > div > button {
+    border: none;
+    border-bottom: solid 2px ;
+    border-image: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgb(110, 110, 110) 50%, rgba(255,254,254,1) 100%);
+    border-image-slice: 1;
+    background-color: rgb(255, 255, 255);
+    outline: none;
+    cursor: pointer;
+}
+
+.cv-maker-editor-navigation-user-info > div > button:hover {
+    border-image: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgb(0, 0, 0) 50%, rgba(255,254,254,1) 100%);
+    border-image-slice: 1;
+}
+
+.cv-maker-editor-navigation-cv-info{
+    position: absolute;
+    height: 92%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cv-maker-editor-navigation-cv-info > div {
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cv-maker-editor-navigation-cv-info > div > button {
+    border: none;
+    border-bottom: solid 2px ;
+    border-image: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgb(110, 110, 110) 50%, rgba(255,254,254,1) 100%);
+    border-image-slice: 1;
+    background-color: rgb(255, 255, 255);
+    outline: none;
+    cursor: pointer;
+}
+
+.cv-maker-editor-navigation-cv-info > div > button:hover {
+    border-image: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgb(0, 0, 0) 50%, rgba(255,254,254,1) 100%);
+    border-image-slice: 1;
+}
+
+.cv-maker-editor-navigation-footer{
+    position: absolute;
+    width: 100%;
+    height: 8%;
+    border-top: solid 1px rgb(80, 80, 80);
+    bottom: 0;
+}
+
+.cv-maker-editor-options{
+    border: solid 1px black;
+    height: 90%;
+    width: 70%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 30px;
+    margin: auto;
+}
+
+.single-info-editor-container{
+    padding: 5px;
+    border: solid 1px black;
+}
+
+/* CV part from here-------------------------------------------- */
+.cv-container-home{
+    height: 1200px;
+    border: 1px solid black;
+    position: relative;
+    margin-top: 40px;
+}
+
+.cv-print-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    background-color: white;
+}
+
+.cv-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.cv{
+    width: 8.27in;
+    height: 11in;
+    padding: 0;
+    position: relative;
+    background-image: url(./component/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.cv-header{
+    /* border-radius: 5px; */
+    /* box-shadow: 1px 1px 5px rgb(168, 168, 168), -1px -1px 5px rgb(178, 178, 178); */
+    background-color:#ffffff4a ;
+    height: 10%;
+    box-sizing: border-box;
+    margin: 6px 8px 4px 8px;
+    /* backdrop-filter: blur(5px); */
+}
+
+.cv-user-image{
+    width: 90px;
+    height: 90px;
+    float: left;
+    margin: 7px 22px 7px 7px;
+    border: solid 2px rgba(5, 5, 5, 0.454);
+    border-radius: 50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+}
+
+.cv-header > h2 {
+    margin-top: 0;
+    padding-top: 15px;
+}
+
+.cv-user-fullname{
+
+}
+
+.cv-user-profession{
+
+}
+
+/* .cv-body{
+    height: 89.8%;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid purple;
+}
+
+.cv-body > div{
+    margin: 3px;
+}*/
+
+.cv-info{
+    box-sizing: border-box;
+    position: absolute;
+    float: left;
+    width: 30%;
+    height: 88%;
+    /* border-radius: 5px; */
+    margin: 4px 4px 8px 8px;
+    background-color: #ffffff4a;
+    /* backdrop-filter: blur(5px) ; */
+    /* box-shadow: 1px 1px 5px rgb(168, 168, 168), -1px -1px 5px rgb(178, 178, 178); */
+} 
+
+.cv-skills-container{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    padding-top: 10px;
+}
+
+.cv-skills-container > h3{
+    margin: 10px 5px 10px 5px;
+    padding-bottom: 2px;
+    border-bottom: solid 1px black;
+}
+
+.cv-single-skill-container{
+    padding: 2px 2px 2px 4px;
+    border-left: solid 1px black;
+    margin: 0 0 18px 4px;
+}
+
+/* .aaa{
+    position: absolute;
+    display: inline;
+    margin: 0;
+    padding: 0;
+} */
+
+.cv-single-skill-container > h4 {
+    width: 35%;
+    height: auto;
+    max-height: 32px;
+
+    margin: 0;
+    display: inline-block;
+    
+}
+
+.cv-span-skill-points{
+    float: right;
+    display: inline;
+}
+
+.cv-span-skill-points > label{
+    font-size: x-small;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.cv-skill-span-inactive{
+    height: 4px;
+    width: 16px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 15%;
+    display: inline-block;
+}
+
+.cv-skill-span-active{
+    background-color:rgb(0, 0, 0);
+}
+
+.cv-contacts-container {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    bottom: 15px;
+}
+
+.cv-contacts-container > h3 {
+    margin: 10px 5px 10px 5px;
+    padding-bottom: 2px;
+    border-bottom: solid 1px black;
+}
+
+.cv-single-contact-container{
+    padding: 2px 2px 2px 4px;
+    border-left: solid 1px black;
+    margin: 0 0 14px 4px;
+}
+
+.cv-single-contact-container > h4{
+    font-size: small;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.cv-single-contact-container > a {
+    font-size: small;
+    color: #000000;
+    text-decoration: none;
+}
+
+/* --------------------- */
+.cv-description-container{
+    box-sizing: border-box;
+    width: 67.1%;
+    height: 88%;
+    float: right;
+    /* border-radius: 5px; */
+    margin: 4px 8px 8px 4px;
+    background-color: #ffffff4a;
+    /* backdrop-filter: blur(5px); */
+    /* box-shadow:1px 1px 5px rgb(168, 168, 168), -1px -1px 5px rgb(178, 178, 178); */
+}
+
+.cv-profile-container{
+    height:auto;
+    box-sizing: border-box;
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+
+.cv-profile-container > h3 {
+    margin: 10px 5px 10px 5px;
+    padding-bottom: 2px;
+    border-bottom: solid 1px black;
+}
+
+.cv-profile-container > p {
+    padding: 2px 2px 2px 6px;
+    margin: 0;
+}
+
+.cv-softSkills-container{
+    height: auto;
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+
+.cv-softSkills-container > h3 {
+    margin: 10px 5px 10px 5px;
+    padding-bottom: 2px;
+    border-bottom: solid 1px black;
+}
+
+.cv-softSkills-container > p {
+    padding: 2px 2px 2px 6px;
+    margin: 0;
+    font-size: medium;
+    
+}
+
+.cv-education-container{
+    height: auto;
+    padding-top: 10px;
+}
+
+.cv-education-container > h3 {
+    margin: 10px 5px 22px 5px;
+    padding-bottom: 2px;
+    border-bottom: solid 1px black;
+}
+
+.cv-single-education{
+    padding-left: 6px;
+    border-left: solid 1px black;
+    padding-left: 6px;
+    margin: 0 0 22px 4px
+}
+
+.cv-single-education > h4 {
+    margin: 0 0 0 0;
+    padding: 0;
+}
+
+.cv-single-education > h5 {
+    margin-top: 6px;
+    padding-right: 14px;
+    display: inline;
+}
+
+.cv-sertifications-container{
+    height: auto;
+    padding-top: 10px;
+}
+
+.cv-sertifications-container > h3 {
+    margin: 18px 5px 22px 5px;
+    padding-bottom: 2px;
+    border-bottom: solid 1px black;
+}
+
+.cv-single-certificate{
+    padding-left: 6px;
+    border-left: solid 1px black;
+    padding-left: 6px;
+    margin: 0 0 22px 4px
+}
+
+.cv-single-certificate > h4 {
+    margin: 0 0 0 0;
+    padding: 0;
+}
+
+.cv-single-certificate > h5 {
+    margin-top: 6px;
+    padding-right: 14px;
+    display: inline;
+}
+
+.cv-maker-home-footer{
+    position: absolute;
+    height: 30px;
+}
