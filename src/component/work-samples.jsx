@@ -6,28 +6,34 @@ import uiHandler from './ui-handler';
 
 export default function WorkSamples (props){
     const {language, darkMode} = React.useContext(AppThemeContext)
+    const [activeWorkSample, setActiveWorkSample] = useState([props.workSamples[props.currentWorkSample]])
+
     React.useEffect(() => {
         uiHandler(language)
+        setActiveWorkSample([props.workSamples[props.currentWorkSample]])
+        console.log(activeWorkSample)
     }, [language, props.currentWorkSample])
+
     return(
         <div className="workSamples-container" id='workSamples-container'>
             
-            {props.workSamples.map ( sample => <WorkSample 
-            key={`${sample.id}-${language}`} // Update the key prop
-            name={sample.name}
-            namePersian={sample.namePersian}
-            path={sample.path}
-            image={sample.image}
-            description={sample.description}
-            descriptionPersian={sample.descriptionPersian}
-            features={sample.features}
-            featuresPersian={sample.featuresPersian}
-            imgSrc={sample.imgSrc}
-            visibility={sample.visibility}
-            uiHandler={uiHandler()}
-            workSamples={props.workSamples}
-            currentWorkSample={props.currentWorkSample}
-            />)}
+            {activeWorkSample.map ( sample => <WorkSample 
+                key={sample.id}
+                name={sample.name}
+                namePersian={sample.namePersian}
+                path={sample.path}
+                image={sample.image}
+                description={sample.description}
+                descriptionPersian={sample.descriptionPersian}
+                features={sample.features}
+                featuresPersian={sample.featuresPersian}
+                imgSrc={sample.imgSrc}
+                visibility={sample.visibility}
+                uiHandler={uiHandler()}
+                workSamples={props.workSamples}
+                currentWorkSample={props.currentWorkSample}
+                />
+            )}
 
           <a className="prevSampleBtn" id='prevSampleBtn' onClick={()=> props.handleCurrentSample(-1)}>❮</a>
           <a className="nextSampleBtn" id='nextSampleBtn' onClick={()=> props.handleCurrentSample(1)}>❯</a>
@@ -42,7 +48,7 @@ function WorkSample (props) {
     }, [ ,language, props.currentWorkSample])
     // console.log(language,props.name)
     return(
-        <div className="workSample" id='workSample' style={{visibility: props.visibility}}>
+        <div className="workSample" id='workSample'>
             <div className='workSample-about' id='workSample-about'>
                 <div className='workSample-about-topic' id='workSample-about-topic'>
                     <h2>Samples  {props.currentWorkSample+1}/{props.workSamples.length}</h2>
