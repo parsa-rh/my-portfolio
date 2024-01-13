@@ -23,6 +23,8 @@ export default function uiHandler(language, darkMode){
             document.getElementById('prevSampleBtn').className = 'prevSampleBtn'
             document.getElementById('nextSampleBtn').className = 'nextSampleBtn'
             document.getElementById('about-container').className = 'about-container'
+            document.getElementById('about-nav-container').className = 'about-nav-container'
+            document.getElementById('about-info-container').className = 'about-info-container'
             document.getElementById('setting-container').className = 'setting-container'
 
         break
@@ -42,6 +44,8 @@ export default function uiHandler(language, darkMode){
             document.getElementById('prevSampleBtn').className = 'prevSampleBtn prevSampleBtn-persian'
             document.getElementById('nextSampleBtn').className = 'nextSampleBtn nextSampleBtn-persian'
             document.getElementById('about-container').className = 'about-container about-container-persian'
+            document.getElementById('about-nav-container').className = 'about-nav-container about-nav-container-persian'
+            document.getElementById('about-info-container').className = 'about-info-container about-info-container-persian'
             document.getElementById('setting-container').className = 'setting-container setting-container-persian'
 
         break

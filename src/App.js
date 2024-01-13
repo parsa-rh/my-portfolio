@@ -1,5 +1,5 @@
 import React, { useEffect, useContext, createContext, Component} from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route, json } from "react-router-dom"
 import './component/portfolio.css'
 // import './component/work-samples.css'
 import NavBar from './component/navbar';
@@ -13,23 +13,30 @@ import workSamplesObj from './samples-obj.json'
 export const AppThemeContext = React.createContext()
 
 export default function App() {
-  const [language, setLanguge]= React.useState('english')
+  const [language, setLanguge]= React.useState(localStorage.getItem('rh-portfolio-language')||'english')
   const [workSamples, setWorkSamples]= React.useState(workSamplesObj.workSamplesObj)
-  const [currentWorkSample, setCurrentWorkSample]= React.useState(0)
+  const [currentWorkSample, setCurrentWorkSample]= React.useState(JSON.parse(localStorage.getItem('rh-portfolio-current-sample'))||0)
 
 
   // this function increments and decrements the current sample value and it is active
   function handleCurrentSample (n){
     setCurrentWorkSample((prevCurrent)=>{
       if( prevCurrent+n >= 0 && prevCurrent + n <= workSamples.length-1 ) {
+        const newCS = prevCurrent+n;
+        localStorage.setItem('rh-portfolio-current-sample', JSON.stringify(newCS));
+        console.log(newCS, JSON.parse(localStorage.getItem('rh-portfolio-current-sample')))
         return (prevCurrent + n)
-      }else{return (prevCurrent)}
+      }else{
+        const newCS = prevCurrent;
+        localStorage.setItem('rh-portfolio-current-sample',JSON.stringify(newCS))
+        return (prevCurrent)}
     })
   }
   
   // this functions handel language toggle
   function handeleToggleLanguage (){
     setLanguge(language === 'english'? 'persian' : 'english')
+    localStorage.setItem('rh-portfolio-language', language === 'english'? 'persian' : 'english')
   }
 
   return(

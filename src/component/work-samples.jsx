@@ -51,7 +51,7 @@ function WorkSample (props) {
         <div className="workSample" id='workSample'>
             <div className='workSample-about' id='workSample-about'>
                 <div className='workSample-about-topic' id='workSample-about-topic'>
-                    <h2>Samples  {props.currentWorkSample+1}/{props.workSamples.length}</h2>
+                    <h2>{language === 'english'? 'Sample ' : 'نمونه '}{props.currentWorkSample+1}/{props.workSamples.length}</h2>
                     <h1>{language === 'english'? props.name : props.namePersian}</h1>
                 </div>
                 <p>{language === 'english'? props.description: props.descriptionPersian}</p> 
@@ -64,7 +64,7 @@ function WorkSample (props) {
             </div>
             <div className='workSample-image' id='workSample-image'>
                 <img src={props.imgSrc}/>
-                <Link to={props.path}>{language === 'english'? 'Visite page' : 'دیدن صفحه'}</Link>
+                <Link to={props.path}>{language === 'english'? 'Visite page →' : '← دیدن صفحه'}</Link>
             </div>
         </div>
     )

@@ -21,27 +21,58 @@ export default function About (){
 
     // this useEffect handle active ui of navigation btn of about section
     React.useEffect(()=>{
+        
         if (currentTab === 'contact'){
-            document.getElementById('about-contact-btn').setAttribute('class', 'po-active-about-btn')
-        }else{document.getElementById('about-contact-btn').setAttribute('class', 'po-deactive-about-btn')};
+            if (language === 'english'){
+                document.getElementById('about-contact-btn').setAttribute('class', 'po-active-about-btn')
+            }else{
+                document.getElementById('about-contact-btn').setAttribute('class', 'po-active-about-btn-persian')
+            }
+        }else{
+            if (language === 'english'){
+                document.getElementById('about-contact-btn').setAttribute('class', 'po-deactive-about-btn')
+            }else{
+                document.getElementById('about-contact-btn').setAttribute('class', 'po-deactive-about-btn-persian')
+            }
+        }
 
-        if (currentTab === 'aboutApp') {
-            document.getElementById('about-aboutApp-btn').setAttribute('class', 'po-active-about-btn')
-        }else{document.getElementById('about-aboutApp-btn').setAttribute('class', 'po-deactive-about-btn')};
-
-        if (currentTab === 'aboutMe') {
-            document.getElementById('about-aboutMe-btn').setAttribute('class', 'po-active-about-btn')
-        }else{document.getElementById('about-aboutMe-btn').setAttribute('class', 'po-deactive-about-btn')};
-    },[,currentTab])
+        if (currentTab === 'aboutApp'){
+            if (language === 'english'){
+                document.getElementById('about-aboutApp-btn').setAttribute('class', 'po-active-about-btn')
+            }else{
+                document.getElementById('about-aboutApp-btn').setAttribute('class', 'po-active-about-btn-persian')
+            }
+        }else{
+            if (language === 'english'){
+                document.getElementById('about-aboutApp-btn').setAttribute('class', 'po-deactive-about-btn')
+            }else{
+                document.getElementById('about-aboutApp-btn').setAttribute('class', 'po-deactive-about-btn-persian')
+            }
+        }
+        
+        if (currentTab === 'aboutMe'){
+            if (language === 'english'){
+                document.getElementById('about-aboutMe-btn').setAttribute('class', 'po-active-about-btn')
+            }else{
+                document.getElementById('about-aboutMe-btn').setAttribute('class', 'po-active-about-btn-persian')
+            }
+        }else{
+            if (language === 'english'){
+                document.getElementById('about-aboutMe-btn').setAttribute('class', 'po-deactive-about-btn')
+            }else{
+                document.getElementById('about-aboutMe-btn').setAttribute('class', 'po-deactive-about-btn-persian')
+            }
+        }
+    },[,currentTab,language])
 
     return(
         <div className='about-container' id='about-container'>
-            <div className='about-nav-container'>
+            <div className='about-nav-container' id='about-nav-container'>
                 <button onClick={()=>setCurrentTab('contact')} className='about-nav-btn' id='about-contact-btn'>{language === 'english' ? 'Contact':'ارتباط'}</button>
-                <button onClick={()=>setCurrentTab('aboutApp')} className='about-nav-btn' id='about-aboutApp-btn'>{language === 'english' ? 'About App' : 'درباره ی برنامه'}</button>
-                <button onClick={()=>setCurrentTab('aboutMe')} className='about-nav-btn' id='about-aboutMe-btn'>{language === 'english' ? 'About Me' : 'درباره ی من'}</button>
+                <button onClick={()=>setCurrentTab('aboutApp')} className='about-nav-btn' id='about-aboutApp-btn'>{language === 'english' ? 'About App' : 'درباره برنامه'}</button>
+                <button onClick={()=>setCurrentTab('aboutMe')} className='about-nav-btn' id='about-aboutMe-btn'>{language === 'english' ? 'About Me' : 'درباره من'}</button>
             </div>
-            <div className='about-info-container'>
+            <div className='about-info-container' id='about-info-container'>
                 {activeTab}
             </div>
         </div>
@@ -49,25 +80,52 @@ export default function About (){
 }
 
 function Contact () {
+    const {language} = React.useContext(AppThemeContext)
+    function copySpanClick(event){
+        // window.open('https://www.linkedin.com/in/parsa-rahmanian-8150211b1/')
+        navigator.clipboard.writeText(event.target.innerText)
+        alert('Copied to clipboard')
+    }
     return(
         <div className='about-single-info-container'>
-            <h1>Contact</h1>
+            <h1>{language === 'english' ? 'Contact' : 'ارتباط'}</h1>
+            <div className='about-single-content'>
+                <h3>E-Mail</h3>
+                <span id='about-email-span' onClick={copySpanClick} title='click to copy'>parsa.rahmanian8@gmail.com</span>
+            </div>
+            <div className='about-single-content'>
+                <h3>WhatsApp</h3>
+                <span id='about-github-span' onClick={copySpanClick} title='click to copy'>+989185913409</span>
+            </div>
+            <div className='about-single-content'>
+                <h3>LinkedIn</h3>
+                <span id='about-github-span' onClick={copySpanClick} title='click to copy'>parsa-rh</span>
+            </div><div className='about-single-content'>
+                <h3>GitHube</h3>
+                <span id='about-github-span' onClick={copySpanClick} title='click to copy'>parsa-rh</span>
+            </div>
+            <div className='about-single-content'>
+                <h3>WhatsApp</h3>
+                <span id='about-github-span' onClick={copySpanClick} title='click to copy'>+989185913409</span>
+            </div>
         </div>
     )
 }
 
 function AboutApp () {
+    const {language} = React.useContext(AppThemeContext)
     return(
         <div className='about-single-info-container'>
-            <h1>AboutApp</h1>
+            <h1>{language === 'english' ? 'About App' : 'درباره برنامه'}</h1>
         </div>
     )
 }
 
 function AboutMe () {
+    const {language} = React.useContext(AppThemeContext)
     return(
         <div className='about-single-info-container'>
-            <h1>AboutMe</h1>
+            <h1>{language === 'english' ? 'About Me' : 'درباره من'}</h1>
         </div>
     )
 }
