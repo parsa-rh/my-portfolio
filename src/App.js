@@ -7,6 +7,7 @@ import Intrduce from './component/intrduce';
 import WorkSamples from './component/work-samples.jsx'
 import About from './component/about';
 import workSamplesObj from './samples-obj.json'
+import lanPng from './img/language-google-translate-48.png'
 // import uiHandler from './component/ui-handler.js';
 
 // this const is a useContext hook , it pass the states and props to smallest component in App and it is passive
@@ -38,10 +39,14 @@ export default function App() {
     setLanguge(language === 'english'? 'persian' : 'english')
     localStorage.setItem('rh-portfolio-language', language === 'english'? 'persian' : 'english')
   }
+  function handeleLanguage (lan){
+    setLanguge(lan)
+    localStorage.setItem('rh-portfolio-language', lan)
+  }
 
   return(
     <AppThemeContext.Provider value={{language}}>
-        <main className='po-main' id='po-main' style={{height: window.innerHeight*3}}>
+        <main className='po-main' id='po-main' >
         {<link rel="stylesheet" href='./component/portfolio.css' />}
           <div className='po-background-blur-container'>
             <div className='blur-square-1'></div>
@@ -54,7 +59,10 @@ export default function App() {
             <div className='blur-square-8'></div>
           </div>
           <header className='header'>
-            <NavBar/>
+            <NavBar 
+            handeleLanguage={handeleLanguage}
+            setLanguge={setLanguge}
+            />
           </header>
           <section id='intrduceSection' >
             <Intrduce/>
@@ -68,10 +76,16 @@ export default function App() {
           </section>
           <section id='aboutSection'>
             <About/>
-          </section>
-            <div className='setting-container' id='setting-container'>
-              <button onClick={handeleToggleLanguage}>Lan</button>
+            <div className='po-lang-setting'>
+              {/* <button onClick={handeleToggleLanguage}>Lan</button> */}
+              <div className='po-lang-container'>
+                    <span>Language</span>
+                    <img src={lanPng} alt='language' />
+                    <button onClick={()=>handeleLanguage('english')} style={language === 'english'? {color:'#fff'}:{color:'#707070'}}>English</button>
+                    <button onClick={()=>handeleLanguage('persian')} style={language === 'english'? {color:'#707070'}:{color:'#fff'}}>Persian</button>
+                </div>
             </div>
+          </section>
         </main>
     </AppThemeContext.Provider>
   )

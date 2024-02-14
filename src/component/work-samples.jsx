@@ -3,6 +3,7 @@ import { AppThemeContext } from '../App';
 import { ReactDOM } from 'react';
 import { Link } from 'react-router-dom';
 import uiHandler from './ui-handler';
+import img from '../img/language-google-translate-48.png'
 
 export default function WorkSamples (props){
     const {language, darkMode} = React.useContext(AppThemeContext)
@@ -14,6 +15,16 @@ export default function WorkSamples (props){
         console.log(activeWorkSample)
     }, [language, props.currentWorkSample])
 
+
+    // React.useEffect(() => {
+    //     document.getElementById('workSamples-container').addEventListener('touchstart', (e) =>{
+    //         console.log(e.changedTouches[0].screenX)
+    //     })
+    //     document.getElementById('workSamples-container').addEventListener('touchend', (e) =>{
+    //         console.log(e.changedTouches[0].screenX)
+    //     })
+        
+    // })
     return(
         <div className="workSamples-container" id='workSamples-container'>
             
@@ -41,8 +52,11 @@ export default function WorkSamples (props){
         </div>
     )
 }
+
 function WorkSample (props) {
     const {language, darkMode} = React.useContext(AppThemeContext)
+    const [sampleImg, setSampleImg] = React.useState(require(`../img/${props.imgSrc}`) || null)
+
     React.useEffect(() => {
         uiHandler(language)
     }, [ ,language, props.currentWorkSample])
@@ -63,7 +77,8 @@ function WorkSample (props) {
                 </ul>
             </div>
             <div className='workSample-image' id='workSample-image'>
-                <img src={props.imgSrc}/>
+                {/* <img src={props.imgSrc}/> */}
+                <img src={sampleImg} />
                 <Link to={props.path}>{language === 'english'? 'Visite page →' : '← دیدن صفحه'}</Link>
             </div>
         </div>

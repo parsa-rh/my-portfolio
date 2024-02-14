@@ -25,15 +25,11 @@ export default function uiHandler(language, darkMode){
             document.getElementById('about-container').className = 'about-container'
             document.getElementById('about-nav-container').className = 'about-nav-container'
             document.getElementById('about-info-container').className = 'about-info-container'
-            document.getElementById('setting-container').className = 'setting-container'
-
         break
 
         case 'pe' :
             document.getElementById('body').className = 'body body-persian'
             document.getElementById('intrduse-container').className = 'intrduse-container intrduse-container-persian'
-            // document.getElementById('aboutApp').className = 'aboutApp aboutApp-persian'
-            // document.getElementById('aboutMe').className = 'aboutMe aboutMe-persian'
             document.getElementById('po-navbar').className = 'po-navbar po-navbar-persian'
             document.getElementById('po-navbar-links').className = 'po-navbar-links po-navbar-links-persian'
             document.getElementById('workSamples-container').className = 'workSamples-container workSamples-container-persian'
@@ -46,8 +42,6 @@ export default function uiHandler(language, darkMode){
             document.getElementById('about-container').className = 'about-container about-container-persian'
             document.getElementById('about-nav-container').className = 'about-nav-container about-nav-container-persian'
             document.getElementById('about-info-container').className = 'about-info-container about-info-container-persian'
-            document.getElementById('setting-container').className = 'setting-container setting-container-persian'
-
         break
     }
 }
