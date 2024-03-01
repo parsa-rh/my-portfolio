@@ -4,9 +4,10 @@ import style from "./cv-maker.css"
 import { BrowserRouter,Routes,Route, json } from "react-router-dom";
 import {nanoid} from "nanoid"
 import CvMakerHome from "./component/cv-maker-home.jsx";
+import PrintPage from "./component/cv-print-page.jsx";
 import Cv from "./component/cv.jsx"
 import img from './component/parsa.jpg'
-import bimg from './component/background.jpg'
+import bimg from './component/peakpx4.jpg'
 
 export const CvInfoPro = React.createContext();
 
@@ -54,7 +55,8 @@ export default function CvMaker(props) {
         <CvInfoPro.Provider value={{cvUiState,setCvUiState,cvUserInfo,setCvUserInfo}}>
             <Routes>
                 <Route path="/" element={<CvMakerHome/>}/>
-                <Route path="Cv" element={<Cv/>}/>
+                {/* <Route path="Cv" element={<Cv/>}/> */}
+                <Route path="PrintPage" element={<PrintPage/>}/>
             </Routes>
         </CvInfoPro.Provider>
     )

@@ -1,57 +1,112 @@
-.cv-maker-home-main{
+.cvm-home-main{
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #dfdfdf;
+    color: #1c135f;
 }
 
-.cv-maker-home-header{
-    height: 40px;
-    border: solid 1px black;
+.color-red{
+    color: #ED1C24;
+}
+
+.cvm-header{
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    border: solid 1px #656565;
+    z-index: 1;
+
+}
+
+.cvm-header * {
+    height: auto;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    justify-content: center;
+    font-size: 32px;
+    font-weight:bolder;
+}
+
+.cvm-landing {
     position: relative;
+    height: 100vh;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
 
-.cv-maker-container{
-    height: 800px;
-    border: solid 1px black;
+.cvm-landing > h1 {
+    width: 100%;
+    font-size: 48px;
+    font-weight: bolder;
+    display: inline-block;
+}
+
+.cvm-landing > h1 > p {
+    display: inline-block;
+}
+
+.cvm-landing > h2 {
+    margin: 1vh 0;
+    padding: 0;
+    /* line-height: 0; */
+}
+
+.cvm-landing > div {
+    padding-top: 5%;
+}
+
+/* cv-maker */
+/* ------------------------------------ */
+.cvm-editor{
+    height: 90vh;
     position: relative;
+    padding: 5% 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
-.cv-maker-editor-navigation{
-    border: solid 1px black;
+.cvm-editor-navigation{
+    position: relative;
     height: 90%;
     width: 20%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 30px;
-    margin: auto;
+    padding: 2px;
+    background-color: white;
+    border-radius: 4px;
 }
 
-.cv-maker-editor-navigation-header { 
+.cvm-editor-navigation-header { 
     width: 100%;
     height: 8%;
-    border-bottom: solid 1px rgb(80, 80, 80);
+    border-bottom: solid 1px #a4a4a4;
 }
 
-.cv-maker-editor-navigation-header > button {
+.cvm-editor-navigation-header > button {
     height: 100%;
     width: 50%;
     border: none;
-    border-radius: 0;
     background-color: rgb(255, 255, 255);
     outline: none;
     cursor: pointer;
+    font-size: 14px;
+    font-weight: 900;
 }
 
-.cv-maker-editor-navigation-header > button:hover {
-    background-color: #bbb;
+.cvm-editor-navigation-header > button:hover {
+    background-color: #dfdfdf;
 }
 
-.cv-maker-editor-navigation-user-info{
+.cvm-editor-navigation-user-info{
     position: absolute;
-    height: 86%;
+    height: 92%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -59,29 +114,23 @@
     
 }
 
-.cv-maker-editor-navigation-user-info > div {
-    margin-top: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.cv-maker-editor-navigation-user-info > div > button {
+.cvm-editor-navigation-user-info > button {
+    width: 98%;
+    height: 8%;
     border: none;
-    border-bottom: solid 2px ;
-    border-image: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgb(110, 110, 110) 50%, rgba(255,254,254,1) 100%);
     border-image-slice: 1;
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     outline: none;
     cursor: pointer;
+    font-size: medium;
 }
 
-.cv-maker-editor-navigation-user-info > div > button:hover {
-    border-image: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgb(0, 0, 0) 50%, rgba(255,254,254,1) 100%);
-    border-image-slice: 1;
+
+.cvm-editor-navigation-user-info > button:hover {
+    background-color: #dfdfdf;
 }
 
-.cv-maker-editor-navigation-cv-info{
+.cvm-editor-navigation-cvtemplate{
     position: absolute;
     height: 92%;
     width: 100%;
@@ -90,61 +139,183 @@
     justify-content: space-between;
 }
 
-.cv-maker-editor-navigation-cv-info > div {
-    margin-top: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.cvm-editor-navigation-cvtemplate > button {
+    width: 98%;
+    height: 8%;
+    border: none;
+    border-image-slice: 1;
+    background-color: white;
+    color: #1c135f;
+    outline: none;
+    cursor: pointer;
+    font-size: medium;
 }
 
-.cv-maker-editor-navigation-cv-info > div > button {
-    border: none;
-    border-bottom: solid 2px ;
-    border-image: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgb(110, 110, 110) 50%, rgba(255,254,254,1) 100%);
-    border-image-slice: 1;
-    background-color: rgb(255, 255, 255);
-    outline: none;
+
+.cvm-editor-navigation-cvtemplate > button:hover {
+    background-color: #dfdfdf;
+}
+
+
+.cvm-editor-navigation-footer{
+    position: absolute;
+    width: 100%;
+    height: 6%;
+    bottom: 0;
+    justify-content: center;
+    text-align: center;
+}
+
+.cvm-editor-navigation-footer * {
+    width: 65%;
+    height: 70%;
+    background-color: #1c135f;
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.cvm-editor-navigation-footer *:hover {
     cursor: pointer;
 }
 
-.cv-maker-editor-navigation-cv-info > div > button:hover {
-    border-image: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgb(0, 0, 0) 50%, rgba(255,254,254,1) 100%);
-    border-image-slice: 1;
-}
-
-.cv-maker-editor-navigation-footer{
-    position: absolute;
-    width: 100%;
-    height: 8%;
-    border-top: solid 1px rgb(80, 80, 80);
-    bottom: 0;
-}
-
-.cv-maker-editor-options{
-    border: solid 1px black;
-    height: 90%;
-    width: 70%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 30px;
-    margin: auto;
-}
-
-.single-info-editor-container{
-    padding: 5px;
-    border: solid 1px black;
-}
-
-/* CV part from here-------------------------------------------- */
-.cv-container-home{
-    height: 1200px;
-    border: 1px solid black;
+/* ------------------------------------------------ */
+.cvm-editor-options-container{
     position: relative;
-    margin-top: 40px;
+    height: 90%;
+    width: 75%;
+    background-color: white;
+    border-radius: 4px;
 }
 
-.cv-print-page {
+.cvm-editor-options {
+    padding: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.cvm-options-cap{
+    width: 100%;
+    margin-bottom: 4%;
+}
+
+.cvm-LaIn-container {
+    /* position: relative; */
+    width: 32%;
+    height: 50px;
+    margin: 2% 0;
+}
+
+.cvm-LaIn-container > label {
+    width: 80%;
+    height: 40%;
+    margin-bottom: 2%;
+    display: inline-block;
+    color: #1c135f;
+    font-size: 20px;
+}
+
+.cvm-LaIn-container > input {
+    width: 60%;
+    border: 0;
+    border-bottom: 1px solid #1c135f;
+    background-color: #00000000;
+}
+
+.cvm-LaIn-container > input:focus{
+    outline: 0;
+    border: 0;
+    border-bottom: 1px solid red;
+}
+
+.cvm-LaUp-container {
+    /* position: relative; */
+    width: 32%;
+    height: 50px;
+    margin: 2% 0;
+}
+
+.cvm-LaUp-container > label {
+    width: 80%;
+    height: 40%;
+    margin-bottom: 2%;
+    display: inline-block;
+    color: #1c135f;
+    font-size: 20px;
+}
+
+.cvm-LaUp-container > input {
+    width: 60%;
+    border: 0;
+    background-color: #00000000;
+}
+
+.cvm-LaTeA-container {
+    width: 100%;
+    margin-top: 5%;
+}
+
+.cvm-LaTeA-container > textarea {
+    width: 85%;
+    height: 90%;
+}
+
+.cvm-addBtn-container {
+    width: 100%;
+    height: 26px;
+    margin-bottom: 4%;
+}
+
+.cvm-addBtn-container > button {
+    width: 14%;
+    height: 100%;
+    float: right;
+    border: 0;
+    border-radius: 4px;
+    background-color: #1c135f;
+    color: white;
+    cursor: pointer;
+}
+
+.cvm-units-container {
+    width: 100%;
+    padding-top: 2%;
+    border-top: #a4a4a4 1px solid;
+}
+
+.cvm-units-container > span {
+    height: 15px;
+    margin: 4px 6px;
+    padding: 4px 4px;
+    background-color: #dfdfdf;
+}
+
+.cvm-units-container > span > button {
+    height: 100%;
+    padding: 0;
+    margin: 0 5px 0 0;
+    border: 0;
+    background-color: #00000000;
+
+}
+
+.cvm-units-container > span > button:hover {
+    cursor: pointer;
+    color: #ED1C24;
+}
+
+.cvm-cv-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 1% 0;
+}
+
+/* Print Page -------------------------------------------------- */
+
+.cvm-print-page{
     position: absolute;
     top: 0;
     left: 0;
@@ -153,29 +324,53 @@
     background-color: white;
 }
 
-.cv-container{
+.cvm-pp-a4size {
+    height: 11.4in;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.cvm-pp-a4size > button {
+    position: absolute;
+    height: 20px;
+    bottom: 0;
+}
+
+/* CV part from here-------------------------------------------- */
+
+/* .cv-print-page {
+    position: relative;
+    height: auto;
+    background-color: white;
+} */
+
+/* .cv-container{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-}
+} */
 
 .cv{
     width: 8.27in;
     height: 11in;
-    padding: 0;
+    /* padding-top: 1px; */
     position: relative;
-    background-image: url(./component/background.jpg);
+    /* background-image: url(./component/peakpx2.jpg); */
     background-size: cover;
     background-repeat: no-repeat;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(0, 0, 0);
 }
 
 .cv-header{
     /* border-radius: 5px; */
     /* box-shadow: 1px 1px 5px rgb(168, 168, 168), -1px -1px 5px rgb(178, 178, 178); */
-    background-color:#ffffff4a ;
+    background-color:#ffffff70 ;
     height: 10%;
     box-sizing: border-box;
     margin: 6px 8px 4px 8px;
+    border-radius: 8px;
     /* backdrop-filter: blur(5px); */
 }
 
@@ -183,16 +378,48 @@
     width: 90px;
     height: 90px;
     float: left;
-    margin: 7px 22px 7px 7px;
+    margin: 0.8% 4% 0 2%;
     border: solid 2px rgba(5, 5, 5, 0.454);
     border-radius: 50%;
     -moz-border-radius:50%;
     -webkit-border-radius:50%;
 }
 
+.cvm-editor-minicv > .cv > .cv-header > .cv-user-image {
+    width: 60px;
+    height: 60px;
+}
+
+.cvm-pp-a4size > .cv-user-image {
+
+}
+
 .cv-header > h2 {
-    margin-top: 0;
+    /* height: 60%; */
+    margin: 0;
     padding-top: 15px;
+    font-size: 25px;
+}
+
+.cvm-editor-minicv > .cv > .cv-header > h2 {
+    font-size: 20px;
+}
+
+/* .cvm-print-page .cv-header > h2 {
+    height: 60%;
+    margin: 0;
+    padding: 0;
+    font-size: 2em;
+} */
+
+.cv-header > h3 {
+    margin: 0;
+    padding-top: 15px;
+    font-size: 20px;
+}
+
+.cvm-editor-minicv > .cv > .cv-header > h2 {
+    font-size: 20px;
 }
 
 .cv-user-fullname{
@@ -220,9 +447,9 @@
     float: left;
     width: 30%;
     height: 88%;
-    /* border-radius: 5px; */
+    border-radius: 8px;
     margin: 4px 4px 8px 8px;
-    background-color: #ffffff4a;
+    background-color: #ffffff70;
     /* backdrop-filter: blur(5px) ; */
     /* box-shadow: 1px 1px 5px rgb(168, 168, 168), -1px -1px 5px rgb(178, 178, 178); */
 } 
@@ -324,9 +551,9 @@
     width: 67.1%;
     height: 88%;
     float: right;
-    /* border-radius: 5px; */
+    border-radius: 8px;
     margin: 4px 8px 8px 4px;
-    background-color: #ffffff4a;
+    background-color: #ffffff70;
     /* backdrop-filter: blur(5px); */
     /* box-shadow:1px 1px 5px rgb(168, 168, 168), -1px -1px 5px rgb(178, 178, 178); */
 }
@@ -426,7 +653,8 @@
     display: inline;
 }
 
-.cv-maker-home-footer{
-    position: absolute;
-    height: 30px;
+.cvm-home-footer{
+    position: relative;
+    height: auto;
+    background-color: #dfdfdf;
 }
